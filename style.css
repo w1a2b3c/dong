@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #2d3e50, #1a252f);
+    color: #d3d3d3;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 8em;
+    color: #9baec8;
+    text-shadow: 0px 0px 20px rgba(155, 174, 200, 0.6);
+    animation: fadeInOut 2s ease-in-out infinite alternate;
+}
+
+p {
+    font-size: 1.5em;
+    color: #a0b1c5;
+    margin: 20px 0;
+    opacity: 0.8;
+}
+
+@keyframes fadeInOut {
+    0% {
+        text-shadow: 0 0 10px #9baec8, 0 0 20px #9baec8, 0 0 30px #9baec8;
+        opacity: 1;
+    }
+    100% {
+        text-shadow: 0 0 15px #9baec8, 0 0 25px #9baec8, 0 0 40px #9baec8;
+        opacity: 0.7;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    color: #d3d3d3;
+    border: 2px solid #9baec8;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background: #9baec8;
+    color: #1a252f;
+    transform: translateY(-5px);
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: #ffffff;
+    font-size: 1em;
+    animation: fall linear infinite;
+    cursor: pointer;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(calc(-50px + 100vw)) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.snowflake:nth-child(odd) {
+    animation-duration: 6s;
+    font-size: 1.2em;
+    opacity: 0.6;
+}
+
+.snowflake:nth-child(even) {
+    animation-duration: 10s;
+    font-size: 0.8em;
+    opacity: 0.4;
+}
